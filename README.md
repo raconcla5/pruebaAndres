@@ -190,10 +190,10 @@ I don’t know how to open the console in the unzipped folder
 
 
 ## This project has follow Features & Scenarios available
-**Release55**
+**Release5**
 - ForderGlobalScen
 
-**SuiteBackend**
+**SuiteBackenddd**
 - BackendsScen
 
 **RegressionCAD**

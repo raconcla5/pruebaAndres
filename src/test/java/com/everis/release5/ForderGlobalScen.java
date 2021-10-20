@@ -1,4 +1,4 @@
-package com.everis.suiteBackend;
+package com.everis.release5;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -33,46 +33,47 @@ import com.everis.actions.*;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 
-public class BackendsScen {
+public class ForderGlobalScen {
     private ArrayList<String> results = new ArrayList<String>();
-    private String FeatureName = "SuiteBackend";
+    private String FeatureName = "Release5";
     private SharedDependencies dependencies;
     
 
-    private G_RealizaBackendsAction g_RealizaBackendsAction;
-    private W_BackendAction1Action w_BackendAction1Action;
-    private A_BackendAction2Action a_BackendAction2Action;
+    private G_CrearproyectoymodeladoAction g_CrearproyectoymodeladoAction;
+    private W_SerealizaunasubidaalAction w_SerealizaunasubidaalAction;
+    private DeleteCreateGlobalAction deleteCreateGlobalAction;
     
 
-    public BackendsScen(SharedDependencies sharedDependencies){
+    public ForderGlobalScen(SharedDependencies sharedDependencies){
         this.dependencies = sharedDependencies;
-        this.dependencies.scenarioName =  "BackendsScen";
+        this.dependencies.scenarioName =  "ForderGlobalScen";
     }
 
     public void initActions() throws Exception {
-        g_RealizaBackendsAction = new G_RealizaBackendsAction(dependencies);
-            w_BackendAction1Action = new W_BackendAction1Action(dependencies);
-            a_BackendAction2Action = new A_BackendAction2Action(dependencies);
+        g_CrearproyectoymodeladoAction = new G_CrearproyectoymodeladoAction(dependencies);
+            w_SerealizaunasubidaalAction = new W_SerealizaunasubidaalAction(dependencies);
+            deleteCreateGlobalAction = new DeleteCreateGlobalAction(dependencies);
             
     }
 
-    @Before("@BackendsScen")
+    @Before("@ForderGlobalScen")
     public void before()  {
         try {
             dependencies.setUp(FeatureName);
+			dependencies.setUpEnvironment("MAIN_CONTEXT");
             initActions();
         } catch (Exception e) {
             Report.reportErrors(e.getMessage());
         }
     }
 
-    @Given("^Realiza Backends$")
-    public void Given1() throws Exception {
+    @Given("^Crear proyecto y modelado$")
+    public void Given() throws Exception {
         try {
-            dependencies.parentTest = dependencies.test.createNode("<b>GIVEN</b> Realiza Backends");
-            Report.reportLog(dependencies, "Realiza Backends testAction is going to start", "INFO", 0, Status.PASS, false, "", "", null);
-            g_RealizaBackendsAction.doG_RealizaBackendsAction();
-            Report.reportLog(dependencies, "Realiza Backends action completed", "INFO", 0, Status.PASS, false, "", "", null);
+            dependencies.parentTest = dependencies.test.createNode("<b>GIVEN</b> Crear proyecto y modelado");
+            Report.reportLog(dependencies, "Crear proyecto y modelado testAction is going to start", "INFO", 0, Status.PASS, false, "", "", null);
+            g_CrearproyectoymodeladoAction.doG_CrearproyectoymodeladoAction();
+            Report.reportLog(dependencies, "Crear proyecto y modelado action completed", "INFO", 0, Status.PASS, false, "", "", null);
         } catch (TimeoutException te) {
             dependencies.finalResult = "BQ";
             Report.reportLog(dependencies, te.getMessage(), dependencies.level, 0, Status.FAIL, true, "isCatch", "", Throwables.getStackTraceAsString(te));
@@ -85,32 +86,13 @@ public class BackendsScen {
         }
     }
 
-	@When("^BackendAction1$")
-    public void When1() throws Exception {
+	@When("^Se realiza una subida al repositorio de Gogs$")
+    public void When() throws Exception {
         try {
-            dependencies.parentTest = dependencies.test.createNode("<b>WHEN</b> BackendAction1");
-            Report.reportLog(dependencies, "BackendAction1 testAction is going to start", "INFO", 0, Status.PASS, false, "", "", null);
-            w_BackendAction1Action.doW_BackendAction1Action();
-            Report.reportLog(dependencies, "BackendAction1 action completed", "INFO", 0, Status.PASS, false, "", "", null);
-        } catch (TimeoutException te) {
-            dependencies.finalResult = "KO";
-            Report.reportLog(dependencies, te.getMessage(), dependencies.level, 0, Status.FAIL, true, "isCatch", "", Throwables.getStackTraceAsString(te));
-            throw new Exception(te.getMessage());
-        } catch (Exception | AssertionError e) {
-            dependencies.finalResult = "KO";
-            Report.reportLog(dependencies, e.getMessage(), dependencies.level, 0, Status.FAIL, true, "isCatch", "", Throwables.getStackTraceAsString(e));
-            Report.reportErrors(e.getMessage());
-            throw new Exception(e.getMessage());
-        }
-    }
-
-	@And("^BackendAction2$")
-    public void And() throws Exception {
-        try {
-            dependencies.parentTest = dependencies.test.createNode("<b>AND</b> BackendAction2");
-            Report.reportLog(dependencies, "BackendAction2 testAction is going to start", "INFO", 0, Status.PASS, false, "", "", null);
-            a_BackendAction2Action.doA_BackendAction2Action();
-            Report.reportLog(dependencies, "BackendAction2 action completed", "INFO", 0, Status.PASS, false, "", "", null);
+            dependencies.parentTest = dependencies.test.createNode("<b>WHEN</b> Se realiza una subida al repositorio de Gogs");
+            Report.reportLog(dependencies, "Se realiza una subida al repositorio de Gogs testAction is going to start", "INFO", 0, Status.PASS, false, "", "", null);
+            w_SerealizaunasubidaalAction.doW_SerealizaunasubidaalAction();
+            Report.reportLog(dependencies, "Se realiza una subida al repositorio de Gogs action completed", "INFO", 0, Status.PASS, false, "", "", null);
         } catch (TimeoutException te) {
             dependencies.finalResult = "KO";
             Report.reportLog(dependencies, te.getMessage(), dependencies.level, 0, Status.FAIL, true, "isCatch", "", Throwables.getStackTraceAsString(te));
@@ -124,15 +106,15 @@ public class BackendsScen {
     }
 
 	
-    @After("@BackendsScen")
+    @After("@ForderGlobalScen")
     public void after() {
         dependencies.isAfter = true;
         dependencies.isBackend = false;
         String afterResult = "succesfully";
         try {
-            dependencies.parentTest = dependencies.test.createNode("<b>AFTER</b> BackendsScen");
+            dependencies.parentTest = dependencies.test.createNode("<b>AFTER</b> ForderGlobalScen");
             
-			w_BackendAction1Action.doW_BackendAction1Action();
+			deleteCreateGlobalAction.doDeleteCreateGlobalAction();
 
         } catch (AssertionError e) {
             Report.reportErrors(e.getMessage());
@@ -147,7 +129,7 @@ public class BackendsScen {
         }
         
         dependencies.isAfter = false;
-        dependencies.logger.info("Result on BackendsScen" + ":" + dependencies.finalResult);
+        dependencies.logger.info("Result on ForderGlobalScen" + ":" + dependencies.finalResult);
         dependencies.logger.info("After execution finished" + ":" + afterResult);
         dependencies.results.add(0, dependencies.finalResult);
         Report.addResults(FeatureName, dependencies.scenarioName, dependencies.results);

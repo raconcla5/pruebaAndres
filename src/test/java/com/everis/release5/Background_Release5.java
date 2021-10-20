@@ -1,4 +1,4 @@
-package com.everis.release55;
+package com.everis.release5;
     
 import java.io.File;
 import java.io.FileInputStream;
