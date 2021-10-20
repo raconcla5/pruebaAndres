@@ -1,4 +1,4 @@
-package com.everis.suiteBackenddd;
+package com.everis.suiteBackend;
     
 import java.io.File;
 import java.io.FileInputStream;

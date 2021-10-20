@@ -1,4 +1,4 @@
-package com.everis.suiteBackenddd;
+package com.everis.suiteBackend;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -35,7 +35,7 @@ import com.aventstack.extentreports.Status;
 
 public class BackendsScen {
     private ArrayList<String> results = new ArrayList<String>();
-    private String FeatureName = "SuiteBackenddd";
+    private String FeatureName = "SuiteBackend";
     private SharedDependencies dependencies;
     
 

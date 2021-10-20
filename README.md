@@ -193,7 +193,7 @@ I don’t know how to open the console in the unzipped folder
 **Release5**
 - ForderGlobalScen
 
-**SuiteBackenddd**
+**SuiteBackend**
 - BackendsScen
 
 **RegressionCAD**

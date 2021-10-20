@@ -1,5 +1,5 @@
-@supertstcucu @SuiteBackenddd
-Feature: SuiteBackenddd
+@supertstcucu @SuiteBackend
+Feature: SuiteBackend
     Background: BeforeEach
     Given Given Backends
     

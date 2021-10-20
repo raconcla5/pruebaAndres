@@ -28,7 +28,7 @@ import cucumber.api.CucumberOptions;
 @RunWith(Cucumber.class)
 @CucumberOptions(features = "features", glue = {
 			"com.everis.release5",
-			"com.everis.suiteBackenddd",
+			"com.everis.suiteBackend",
 			"com.everis.regressionCAD",
 			"com.everis.regressionOtherActions",
 			 })
@@ -51,7 +51,7 @@ public class RunnerTest {
 				"-p", "junit:" + folderLogs + "/Cucumber/ReportXML.xml",
 				"features",
 				"-g", "com.everis.release5",
-				"-g", "com.everis.suiteBackenddd",
+				"-g", "com.everis.suiteBackend",
 				"-g", "com.everis.regressionCAD",
 				"-g", "com.everis.regressionOtherActions",
 				"-t", Utils.selectExecution()
