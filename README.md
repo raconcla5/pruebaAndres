@@ -191,7 +191,7 @@ I don’t know how to open the console in the unzipped folder
 
 ## This project has follow Features & Scenarios available
 **Release5**
-- ForderGlobalScen
+- ForderGloballScen
 
 **SuiteBackend**
 - BackendsScen

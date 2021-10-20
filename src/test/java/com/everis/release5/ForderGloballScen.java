@@ -33,7 +33,7 @@ import com.everis.actions.*;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 
-public class ForderGlobalScen {
+public class ForderGloballScen {
     private ArrayList<String> results = new ArrayList<String>();
     private String FeatureName = "Release5";
     private SharedDependencies dependencies;
@@ -44,9 +44,9 @@ public class ForderGlobalScen {
     private DeleteCreateGlobalAction deleteCreateGlobalAction;
     
 
-    public ForderGlobalScen(SharedDependencies sharedDependencies){
+    public ForderGloballScen(SharedDependencies sharedDependencies){
         this.dependencies = sharedDependencies;
-        this.dependencies.scenarioName =  "ForderGlobalScen";
+        this.dependencies.scenarioName =  "ForderGloballScen";
     }
 
     public void initActions() throws Exception {
@@ -56,7 +56,7 @@ public class ForderGlobalScen {
             
     }
 
-    @Before("@ForderGlobalScen")
+    @Before("@ForderGloballScen")
     public void before()  {
         try {
             dependencies.setUp(FeatureName);
@@ -106,13 +106,13 @@ public class ForderGlobalScen {
     }
 
 	
-    @After("@ForderGlobalScen")
+    @After("@ForderGloballScen")
     public void after() {
         dependencies.isAfter = true;
         dependencies.isBackend = false;
         String afterResult = "succesfully";
         try {
-            dependencies.parentTest = dependencies.test.createNode("<b>AFTER</b> ForderGlobalScen");
+            dependencies.parentTest = dependencies.test.createNode("<b>AFTER</b> ForderGloballScen");
             
 			deleteCreateGlobalAction.doDeleteCreateGlobalAction();
 
@@ -129,7 +129,7 @@ public class ForderGlobalScen {
         }
         
         dependencies.isAfter = false;
-        dependencies.logger.info("Result on ForderGlobalScen" + ":" + dependencies.finalResult);
+        dependencies.logger.info("Result on ForderGloballScen" + ":" + dependencies.finalResult);
         dependencies.logger.info("After execution finished" + ":" + afterResult);
         dependencies.results.add(0, dependencies.finalResult);
         Report.addResults(FeatureName, dependencies.scenarioName, dependencies.results);
