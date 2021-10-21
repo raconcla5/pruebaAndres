@@ -8,14 +8,15 @@ import java.nio.file.FileSystem;
 import java.nio.file.FileSystems;
 import org.apache.log4j.PropertyConfigurator;
 
-import com.everis.RunnerTest;
+import com.everis.Launcher;
 import com.everis.utils.Utils;
+        import com.everis.utils.Constant;
 
 	public class ExtentHtml {
 		public static FileSystem fileSystem = FileSystems.getDefault();
 		public static String resources =  System.getProperty("user.dir") + fileSystem.getSeparator() + "resources";
-		public static RunnerTest runnerTest = new RunnerTest();
-		
+		public static Launcher launcher = new Launcher();
+		public static Constant constant = launcher.constant;
 		public static ExtentReports extent = new ExtentReports();
 		public static boolean isNotInitializated = false;
 		private static Logger logger = Utils.logger();
@@ -49,7 +50,7 @@ import com.everis.utils.Utils;
 		
 		public static void createTest() {
 			PropertyConfigurator.configure(resources + fileSystem.getSeparator() + "log4j.properties");
-			htmlReporter = new ExtentHtmlReporter(RunnerTest.folderLogs + fileSystem.getSeparator() + "supertstcucuResults.html");
+			htmlReporter = new ExtentHtmlReporter(constant.folderLogs + fileSystem.getSeparator() + "3108smokeResults.html");
 			htmlReporter.loadXMLConfig(System.getProperty("user.dir") + fileSystem.getSeparator() + "extent_config.xml");
 			customizeHtml(htmlReporter);
 			isNotInitializated = true;
