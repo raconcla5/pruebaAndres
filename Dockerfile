@@ -1,13 +1,17 @@
 ARG CR_URL
-FROM $CR_URL/openjdk:8-jdk-alpine as final
-RUN apk --no-cache add curl jq
+FROM selenium/standalone-chrome:4.0.0-rc-3-20211010 as final
+ENV VNC_NO_PASSWORD=true
+USER root
+RUN apt-get update && apt-get install zip && apt-get install curl jq
+WORKDIR /app
+COPY ./ /app
 
 FROM $CR_URL/maven:3.6.3-jdk-8 as build
 
 ARG NEXUS_USR_READ
 ARG NEXUS_PSW_READ
 ARG NEXUS_URL_MVN
-RUN apt-get update && apt-get install zip
+
 
 WORKDIR /src
 # Just copy pom files to install necessary packages
@@ -28,17 +32,18 @@ RUN mvn -s .m2/settings.xml package -DskipTests
 WORKDIR /projectFolderExe
 
 #Copy needs to build executable ZIP
-RUN cp -r /src/resources ./ && cp /src/target/3108smokeExe.jar ./ && cp -r /src/target/lib ./
+RUN cp -r /src/resources ./ && cp /src/target/pruebaeventosExe.jar ./ && cp -r /src/target/lib ./
 COPY ./extent_config.xml ./
 COPY ./config.properties ./
 COPY ./README.md ./
 
-RUN cd /projectFolderExe && zip -r ./3108smokeExe.zip . -x "execute.sh"
 
 
 FROM final
 WORKDIR /app
-COPY --from=build projectFolderExe/3108smokeExe.zip .
-COPY execute.sh .
+COPY --from=build /projectFolderExe /app/projectFolderExe
+RUN cp /app/execute.sh /app/projectFolderExe
+WORKDIR /app/projectFolderExe
+
 # RUN useradd -u 1001 nonrootuser
 # RUN chown -R 1001:1001 $CATALINA_HOME

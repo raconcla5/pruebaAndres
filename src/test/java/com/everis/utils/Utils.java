@@ -328,14 +328,12 @@ public class Utils {
 
     public static ArrayList<String> getTestCases(String option, ArrayList<String> testCases) throws Exception {
         switch (option) {
-            case "sUITESITA":
-            	testCases.add("com.everis.sUITESITA.Test_TestCaseModel");
-			
+            case "testSuiteModel":
+            
             break;
 			
             case "complete":
-                	testCases.add("com.everis.sUITESITA.Test_TestCaseModel");
-			
+                
                 break;
             default:
                 throw new Exception ("The TestSuite " + option + " does not exist");
@@ -350,14 +348,12 @@ public class Utils {
         String suiteName = (String) reflectiveClass.getField("suiteName").get(reflectiveClass);
         String caseName = (String) reflectiveClass.getField("caseName").get(reflectiveClass);
         Constant constant = (Constant) reflectiveClass.getField("constant").get(reflectiveClass);
-        String driverType = prop.getProperty("WebDriver.BROWSER").toLowerCase().replace(" ", "");
-        List<String> listNamesFirefox = Arrays.asList("testcontainerfirefox", "testcontainermozilla", "testcontainermozillafirefox", "testcontainergecko");
-
+        
         constant.results.add(finalResult);
         Report.addResults(suiteName, caseName, constant.results);
         constant.initialize.flush();
         for (Map.Entry<String, WebDriver> context : constant.contextsDriver.entrySet()) {
-            if (!listNamesFirefox.contains(driverType)) {
+            if (!context.getValue().toString().contains("Firefox")) {
                 context.getValue().close();
             }
             context.getValue().quit();

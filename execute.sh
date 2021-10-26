@@ -1,3 +1,4 @@
+cd /app/projectFolderExe && zip -r ./pruebaeventosExe.zip . -x "execute.sh"
 #!/bin/sh
 
 echo 'Wait dapr...';
@@ -9,7 +10,7 @@ while [ $_RETURN != "204" ]; do
     sleep 5
 done
 
-echo "{ \"operation\": \"create\", \"data\": \"$( base64 3108smokeExe.zip )\", \"metadata\": { \"blobName\": \"${BUILD_ID}.zip\" } }" > data.json
+echo "{ \"operation\": \"create\", \"data\": \"$( base64 pruebaeventosExe.zip )\", \"metadata\": { \"blobName\": \"${BUILD_ID}.zip\" } }" > data.json
 
 response=$(curl -d @data.json  http://localhost:3500/v1.0/bindings/testing-artifacts)
 

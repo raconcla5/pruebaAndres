@@ -50,7 +50,7 @@ import com.everis.utils.Utils;
 		
 		public static void createTest() {
 			PropertyConfigurator.configure(resources + fileSystem.getSeparator() + "log4j.properties");
-			htmlReporter = new ExtentHtmlReporter(constant.folderLogs + fileSystem.getSeparator() + "3108smokeResults.html");
+			htmlReporter = new ExtentHtmlReporter(constant.folderLogs + fileSystem.getSeparator() + "pruebaeventosResults.html");
 			htmlReporter.loadXMLConfig(System.getProperty("user.dir") + fileSystem.getSeparator() + "extent_config.xml");
 			customizeHtml(htmlReporter);
 			isNotInitializated = true;
