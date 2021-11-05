@@ -1,4 +1,4 @@
-package com.everis.release6;
+package com.everis.release66;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -42,7 +42,7 @@ public class Test_PSFUEND02E0114 {
     private static Launcher launcher = new Launcher();
     public static DriverInit driverInit = new DriverInit();
     public static Constant constant = launcher.constant;
-    public static String suiteName = "Release6";
+    public static String suiteName = "Release66";
     public static String caseName = Test_PSFUEND02E0114.class.getSimpleName();
     public static String modelDocumentation = "";
     public static WebDriver driver;
@@ -56,7 +56,7 @@ public class Test_PSFUEND02E0114 {
     public static HashMap<String, String> excelSheet;
 
     
-    private static Release6BeforeEach release6BeforeEach;
+    private static Release66BeforeEach release66BeforeEach;
 	private static Release6Page release6Page;
 	private static GlobalRelease6Action globalRelease6Action;
 	private static LocalRelease6Action localRelease6Action;
@@ -80,7 +80,7 @@ public class Test_PSFUEND02E0114 {
             constant.test = constant.initialize.getTest();
             driver = setUpEnvironment(folderDownloads, prop, "MAIN_CONTEXT", constant.contextsDriver);
                 
-        	release6BeforeEach.doBeforeEach();
+        	release66BeforeEach.doBeforeEach();
         } catch (AssertionError | Exception e) {
             Report.reportErrors(e.getMessage());
 			finalResult = "BQ";
@@ -259,7 +259,7 @@ public class Test_PSFUEND02E0114 {
         driver = driverInit.driverSelector(folderDownloads, prop, nameDriver, contextsDriver);
             handler = driver.getWindowHandle();
         reflectiveClass = Utils.getReflective(Test_PSFUEND02E0114.class.getCanonicalName());
-			release6BeforeEach = new Release6BeforeEach(reflectiveClass);
+			release66BeforeEach = new Release66BeforeEach(reflectiveClass);
 		release6Page = new Release6Page(reflectiveClass);
 		globalRelease6Action = new GlobalRelease6Action(reflectiveClass);
 		localRelease6Action = new LocalRelease6Action(reflectiveClass);

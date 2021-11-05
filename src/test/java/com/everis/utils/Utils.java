@@ -328,8 +328,8 @@ public class Utils {
 
     public static ArrayList<String> getTestCases(String option, ArrayList<String> testCases) throws Exception {
         switch (option) {
-            case "release6":
-            	testCases.add("com.everis.release6.Test_PSFUEND02E0114");
+            case "release66":
+            	testCases.add("com.everis.release66.Test_PSFUEND02E0114");
 			
             break;
 			case "release5":
@@ -359,7 +359,7 @@ public class Utils {
             break;
 			
             case "complete":
-                	testCases.add("com.everis.release6.Test_PSFUEND02E0114");
+                	testCases.add("com.everis.release66.Test_PSFUEND02E0114");
 				testCases.add("com.everis.release5.Test_PSFUEND02E0112");
 				testCases.add("com.everis.release5.Test_PSFUEND02E0113");
 				testCases.add("com.everis.regressionCADActions.Test_PSFUEND02E0108");

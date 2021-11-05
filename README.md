@@ -201,7 +201,7 @@ I don’t know how to open the console in the unzipped folder
 
 
 ## This project has follow TestSuites & TestCases available
-**Release6**
+**Release66**
 - Test_PSFUEND02E0114
 
 **Release5**

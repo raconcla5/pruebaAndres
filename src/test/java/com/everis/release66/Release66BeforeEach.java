@@ -1,4 +1,4 @@
-package com.everis.release6;
+package com.everis.release66;
 
 import com.everis.utils.Utils;
 import com.everis.utils.Constant;
@@ -32,7 +32,7 @@ import io.restassured.response.Response;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 
-public class Release6BeforeEach{
+public class Release66BeforeEach{
 
     private Class reflectiveClass;
     private Constant constant;
@@ -61,7 +61,7 @@ public class Release6BeforeEach{
 	private static By SaveLastName = By.xpath("//label[contains(text(),'LastName')]");
 	private static By SaveEmail = By.xpath("//label[contains(text(),'Email')]");
 
-    public Release6BeforeEach(Class reflectiveClass) throws Exception {
+    public Release66BeforeEach(Class reflectiveClass) throws Exception {
         this.reflectiveClass = reflectiveClass;
         getPrepareBeforeEach();
         js = (JavascriptExecutor)driver;
