@@ -32,7 +32,7 @@ RUN mvn -s .m2/settings.xml package -DskipTests
 WORKDIR /projectFolderExe
 
 #Copy needs to build executable ZIP
-RUN cp -r /src/resources ./ && cp /src/target/pruebaeventosExe.jar ./ && cp -r /src/target/lib ./
+RUN cp -r /src/resources ./ && cp /src/target/supertstactExe.jar ./ && cp -r /src/target/lib ./
 COPY ./extent_config.xml ./
 COPY ./config.properties ./
 COPY ./README.md ./

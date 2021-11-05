@@ -102,7 +102,7 @@ public class Utils {
                 }
             }   
 
-            
+            sheetList.put("CheckText:MultipleParameter", getTabs("CheckText:MultipleParameter", sheetList));
             fis.close();
             book.close();
         } catch (Exception e) { 
@@ -328,12 +328,49 @@ public class Utils {
 
     public static ArrayList<String> getTestCases(String option, ArrayList<String> testCases) throws Exception {
         switch (option) {
-            case "testSuiteModel":
-            
+            case "release6":
+            	testCases.add("com.everis.release6.Test_PSFUEND02E0114");
+			
+            break;
+			case "release5":
+            	testCases.add("com.everis.release5.Test_PSFUEND02E0112");
+				testCases.add("com.everis.release5.Test_PSFUEND02E0113");
+			
+            break;
+			case "regressionCADActions":
+            	testCases.add("com.everis.regressionCADActions.Test_PSFUEND02E0108");
+			
+            break;
+			case "regressionOtherActions":
+            	testCases.add("com.everis.regressionOtherActions.Test_PSFUEND02E0109");
+				testCases.add("com.everis.regressionOtherActions.Test_PSFUEND02E0111");
+				testCases.add("com.everis.regressionOtherActions.Test_PSFUEND02E0110");
+			
+            break;
+			case "regressionCAD":
+            	testCases.add("com.everis.regressionCAD.Test_PSFUEND02E0104");
+			
+            break;
+			case "regressionOther":
+            	testCases.add("com.everis.regressionOther.Test_PSFUEND02E0106");
+				testCases.add("com.everis.regressionOther.Test_PSFUEND02E0105");
+				testCases.add("com.everis.regressionOther.Test_PSFUEND02E0107");
+			
             break;
 			
             case "complete":
-                
+                	testCases.add("com.everis.release6.Test_PSFUEND02E0114");
+				testCases.add("com.everis.release5.Test_PSFUEND02E0112");
+				testCases.add("com.everis.release5.Test_PSFUEND02E0113");
+				testCases.add("com.everis.regressionCADActions.Test_PSFUEND02E0108");
+				testCases.add("com.everis.regressionOtherActions.Test_PSFUEND02E0109");
+				testCases.add("com.everis.regressionOtherActions.Test_PSFUEND02E0111");
+				testCases.add("com.everis.regressionOtherActions.Test_PSFUEND02E0110");
+				testCases.add("com.everis.regressionCAD.Test_PSFUEND02E0104");
+				testCases.add("com.everis.regressionOther.Test_PSFUEND02E0106");
+				testCases.add("com.everis.regressionOther.Test_PSFUEND02E0105");
+				testCases.add("com.everis.regressionOther.Test_PSFUEND02E0107");
+			
                 break;
             default:
                 throw new Exception ("The TestSuite " + option + " does not exist");

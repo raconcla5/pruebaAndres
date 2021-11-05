@@ -7,12 +7,12 @@
 	
 	<modelVersion>4.0.0</modelVersion>
     <groupId>java.com.everis</groupId>
-    <artifactId>pruebaeventos</artifactId>
+    <artifactId>supertstact</artifactId>
     <version>0.0.1-SNAPSHOT</version>
 	
 	<developers>
 		<developer>
-			<name>guest</name>
+			<name>rcontrcl</name>
 			<roles></roles>
 		</developer>
 	</developers>
@@ -33,7 +33,7 @@
 	
 	<!-- Build and plugins -->
 	<build>
-		<finalName>pruebaeventosExe</finalName>
+		<finalName>supertstactExe</finalName>
 		<sourceDirectory>src/test/java</sourceDirectory>
 		<plugins>
 			<!-- Compile the project -->
@@ -120,7 +120,7 @@
 							<resources>
 								<resource>
 									<directory>resources</directory>
-									<filtering>true</filtering>
+									<filtering>false</filtering>
 								</resource>
 							</resources>
 						</configuration>

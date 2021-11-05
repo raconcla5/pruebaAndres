@@ -1,5 +1,6 @@
-cd /app/projectFolderExe && zip -r ./pruebaeventosExe.zip . -x "execute.sh"
 #!/bin/sh
+
+cd /app/projectFolderExe && zip -r ./supertstactExe.zip . -x "execute.sh"
 
 echo 'Wait dapr...';
 _RETURN=0
@@ -10,7 +11,7 @@ while [ $_RETURN != "204" ]; do
     sleep 5
 done
 
-echo "{ \"operation\": \"create\", \"data\": \"$( base64 pruebaeventosExe.zip )\", \"metadata\": { \"blobName\": \"${BUILD_ID}.zip\" } }" > data.json
+echo "{ \"operation\": \"create\", \"data\": \"$( base64 supertstactExe.zip )\", \"metadata\": { \"blobName\": \"${BUILD_ID}.zip\" } }" > data.json
 
 response=$(curl -d @data.json  http://localhost:3500/v1.0/bindings/testing-artifacts)
 
