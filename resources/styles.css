@@ -5,6 +5,13 @@ body {
 	font-size: 13px !important;
 }
 
+.nav-wrapper {
+	background: #205390;
+}
+.brand-logo blue darken-3 {
+	background: #205390;
+}
+
 /* Category modification */
 
 .start-time,

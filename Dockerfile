@@ -2,7 +2,7 @@ ARG CR_URL
 FROM selenium/standalone-chrome:4.0.0-rc-3-20211010 as final
 ENV VNC_NO_PASSWORD=true
 USER root
-RUN apt-get update && apt-get install zip && apt-get install curl jq
+RUN apt-get update && apt-get install zip && apt-get install curl jq && apt-get -qqy install zip tmux ffmpeg
 WORKDIR /app
 COPY ./ /app
 
@@ -14,7 +14,7 @@ ARG NEXUS_URL_MVN
 
 
 WORKDIR /src
-# Just copy pom files to install necessary packages
+# Copy pom files to install necessary packages
 # It must be done this way to run with Kaniko cache.
 COPY pom.xml .
 COPY ./.m2 ./.m2
@@ -32,10 +32,11 @@ RUN mvn -s .m2/settings.xml package -DskipTests
 WORKDIR /projectFolderExe
 
 #Copy needs to build executable ZIP
-RUN cp -r /src/resources ./ && cp /src/target/supertstactExe.jar ./ && cp -r /src/target/lib ./
+RUN cp -r /src/resources ./ && cp /src/target/3108smokeExe.jar ./ && cp -r /src/target/lib ./
 COPY ./extent_config.xml ./
 COPY ./config.properties ./
 COPY ./README.md ./
+
 
 
 

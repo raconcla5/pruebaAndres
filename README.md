@@ -1,4 +1,4 @@
-# PROJECT: supertstact
+# PROJECT: 3108smoke
     This project contains automated tests based on a Java Selenium JUNIT 5 and Maven architecture.
 	In this project we can find features like:
 	Logs generation, automated screenshot creation, testlink integration, and usage of Excel files as input datasets for Test Cases.
@@ -158,7 +158,7 @@ Selecting all Test Plan, set blank both properties
 
 **Run jar file reading config.properties file configuration, execute this command from the target folder**
 
-	java -jar supertstactExe.jar
+	java -jar 3108smokeExe.jar
 
 ### How execute using MAVEN
 
@@ -178,11 +178,11 @@ Run by selecting various TestCases that we want to execute
 
 Run only one Suite from the Test Plan (nameSuite = name of the Test Suite without spaces)
 
-	mvn -Dtest=com.everis.nameSuite.Test* test
+	mvn -Dtest=com.dedalow.nameSuite.Test* test
 
 Run by selecting various Suites from the Test Plan
 
-	mvn -Dtest=com.everis.nameSuite1.Test*,com.everis.nameSuite2.Test* test
+	mvn -Dtest=com.dedalow.nameSuite1.Test*,com.dedalow.nameSuite2.Test* test
 
 ### FAQ
 Test is not executed because the driver is not updated and no message is displayed
@@ -201,25 +201,5 @@ I don’t know how to open the console in the unzipped folder
 
 
 ## This project has follow TestSuites & TestCases available
-**Release66**
-- Test_PSFUEND02E0114
-
-**Release5**
-- Test_PSFUEND02E0112
-- Test_PSFUEND02E0113
-
-**RegressionCADActions**
-- Test_PSFUEND02E0108
-
-**RegressionOtherActions**
-- Test_PSFUEND02E0109
-- Test_PSFUEND02E0111
-- Test_PSFUEND02E0110
-
-**RegressionCAD**
-- Test_PSFUEND02E0104
-
-**RegressionOther**
-- Test_PSFUEND02E0106
-- Test_PSFUEND02E0105
-- Test_PSFUEND02E0107
+**SUITESITA**
+- Test_TestCaseModel

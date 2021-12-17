@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <extentreports>
     <configuration>   
-        <documentTitle>Everis Html Report</documentTitle>
+        <documentTitle>Dedalow Html Report</documentTitle>
         <encoding>UTF-8</encoding>   
         <theme>standard</theme>
         <reportName> 
-            <![CDATA[ 
+            <![CDATA[
                 <img src='../../resources/logo.png' style='position: absolute;left: 220px;width: auto;'/>
-                <message> Everis Html Report </message>
+                <message> Html Report </message>
             ]]> 
         </reportName>
         <scripts>

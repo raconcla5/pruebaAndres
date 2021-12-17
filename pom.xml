@@ -6,8 +6,8 @@
 	<!-- Test Project and Modeler Information -->
 	
 	<modelVersion>4.0.0</modelVersion>
-    <groupId>java.com.everis</groupId>
-    <artifactId>supertstact</artifactId>
+    <groupId>java.com.dedalow</groupId>
+    <artifactId>3108smoke</artifactId>
     <version>0.0.1-SNAPSHOT</version>
 	
 	<developers>
@@ -33,7 +33,7 @@
 	
 	<!-- Build and plugins -->
 	<build>
-		<finalName>supertstactExe</finalName>
+		<finalName>3108smokeExe</finalName>
 		<sourceDirectory>src/test/java</sourceDirectory>
 		<plugins>
 			<!-- Compile the project -->
@@ -77,7 +77,7 @@
 						<manifest>
 							<addClasspath>true</addClasspath>
 							<classpathPrefix>lib/</classpathPrefix>
-							<mainClass>com.everis.Launcher</mainClass>
+							<mainClass>com.dedalow.Launcher</mainClass>
 						</manifest>
 					</archive>
 				</configuration>
